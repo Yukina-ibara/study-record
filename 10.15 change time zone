@@ -1,0 +1,23 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int BJT = in.nextInt();
+		int UTC = 0;
+		if(2359>=BJT==BJT>=800) 
+		{
+			UTC=BJT-800;
+		}
+		else if(800>BJT==BJT>=0) 
+		{
+			UTC=1600+BJT;
+		}
+		System.out.println(UTC);
+	}
+
+}
