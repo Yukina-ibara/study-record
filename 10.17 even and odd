@@ -1,0 +1,25 @@
+package hello;
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int number = in.nextInt();
+		int odd = 0;
+		int even = 0;
+		while (number != -1)
+		{
+			if (number%2 == 1)//此处不能用(number%2 == 0)？
+			{
+				odd = odd+1;
+			}
+			else even = even+1;
+			number = in.nextInt();
+		}
+		System.out.print(odd+" "+even);
+	}
+
+}
