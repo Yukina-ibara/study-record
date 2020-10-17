@@ -1,0 +1,26 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int number = 0;
+		int total = 0;
+		int n = 0;
+		System.out.println("请输入数字：");
+		number = in.nextInt();
+		while (number != -1)
+		{
+			total = total + number;
+			n = n+1;
+			System.out.println(total+","+n);
+			number = in.nextInt();
+			
+		}
+		System.out.println((double)total/n);
+	}
+
+}
