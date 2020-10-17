@@ -1,0 +1,26 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int number = (int)(Math.random()*100+1);//Math.random()生成一个范围为[0,1)的浮点数
+		int guess = in.nextInt();
+		int n = 1;
+		while(guess != number)
+		{
+			if(number > guess)
+			{
+				System.out.println("比"+guess+"大");
+			}
+			else System.out.println("比"+guess+"小");
+			n = n+1;
+			guess = in.nextInt();
+		}
+		System.out.println("正确，你猜了"+n+"次");
+	}
+
+}
