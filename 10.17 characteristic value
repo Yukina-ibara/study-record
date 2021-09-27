@@ -1,0 +1,29 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int number = in.nextInt();//输入的数
+		int result = 0;//输出结果
+		int digit = 1;//数位
+		int y = 1;//此数位的二进制值
+		do
+		{
+			
+			int num = number%10;//num的最后一位
+			if (digit%2 == num%2)//如果数位的奇偶和最后一位的奇偶相同
+			{
+				result = result+y;
+			}
+			number = number/10;
+			digit = digit+1;
+			y = y*2;
+		}while (number != 0);
+		System.out.println(result);
+	}
+
+}
