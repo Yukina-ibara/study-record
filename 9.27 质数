@@ -1,0 +1,33 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int n = 2;
+		int x = 0;//质数的个数
+		while(x<=30)
+		{
+			int y = 1;//1代表是质数，0代表不是质数
+			for (int i = 2; i<n; i++)//i是除数，范围是2~n之间
+			{
+				if(n%i == 0)
+				{
+					y = 0;
+					break;
+				}
+			}
+			if(y == 1)
+			{
+				System.out.print(n+" ");
+				x ++;
+			}
+			n ++;
+		}
+		
+	}
+
+}
