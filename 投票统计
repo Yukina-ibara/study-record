@@ -1,0 +1,25 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		
+		int x = in.nextInt();//输入的数
+		int[] count = new int[10];//数组，第n位的值代表n有多少个
+		while(x != -1) {
+			if(x>=0 && x<=9) {
+				count[x] ++;
+			}
+			x = in.nextInt();
+			
+		}
+		for(int i=0;i<count.length;i++)
+		System.out.println(count[i]+" ");
+		}	
+	}
+
+//写一个程序，输入数量不确定的[0,9]范围内的整数，统计每一种数字出现的次数，输入-1表示结束
