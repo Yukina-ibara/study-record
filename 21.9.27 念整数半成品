@@ -1,82 +1,98 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner in = new Scanner(System.in );
 		
 		int number = in.nextInt();
 		int a = number;
-		if(number >= -100000 && number <= 100000) {
-			if(number < 0) {
-				System.out.println("fu ");
-				number *= -1;
+		int cnt = 0;
+		if(a >= -100000 && a <= 100000) {
+			if(a < 0) {
+				System.out.print("fu ");
+				a *= -1;
 			}
-			int x = 10000;
-			while(x >= 1) {
-				a = a/x;
-				if(a != 0) {
-					switch (a) {
+			if(a==0) {
+				System.out.println("ling");
+			}
+			else {
+				for(int c=a;c>=10;cnt++) {
+					c /= 10;
+				}
+				for(int x=(int)Math.pow(10, cnt);x >= 1;x/=10) {
+					int b = a/x;
+					a = a%x;
+					switch (b) {
 					case 0:
-	
-					System.out.print("ling ");
-	
+
+					System.out.print("ling");
+
 					break;
-	
+
 					case 1:
-	
-					System.out.print("yi ");
-	
+
+					System.out.print("yi");
+
 					break;
-	
+
 					case 2:
-	
-					System.out.print("er ");
-	
+
+					System.out.print("er");
+
 					break;
-	
+
 					case 3:
-	
-					System.out.print("san ");
-	
+
+					System.out.print("san");
+
 					break;
-	
+
 					case 4:
-	
-					System.out.print("si ");
-	
+
+					System.out.print("si");
+
 					break;
-	
+
 					case 5:
-	
-					System.out.print("wu ");
-	
+
+					System.out.print("wu");
+
 					break;
-	
+
 					case 6:
-	
-					System.out.print("liu ");
-	
+
+					System.out.print("liu");
+
 					break;
-	
+
 					case 7:
-	
-					System.out.print("qi ");
-	
+
+					System.out.print("qi");
+
 					break;
-	
+
 					case 8:
-	
-					System.out.print("ba ");
-	
+
+					System.out.print("ba");
+
 					break;
-	
+
 					case 9:
-	
-					System.out.print("jiu ");
-	
+
+					System.out.print("jiu");
+
 					break;
 					}
+					if(x>1) {
+						System.out.print(" ");
+					}
 				}
-				x /= 10;
 			}
+
 		}
 	}
 }
