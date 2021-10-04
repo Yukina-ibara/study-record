@@ -14,24 +14,27 @@ public class hello{
 		int m = in.nextInt();
 		int a = 0;
 		int sum = 0;
-		while(prime<=200)
+		while(n<=200 && m<=200)
 		{
-			int y = 1;//1代表是质数，0代表不是质数
-			for (int i = 2; i<prime; i++)//i是除数，范围是2~n之间
+			boolean y = true;//1代表是质数，0代表不是质数
+			for (int i = 2; i<=Math.sqrt(prime); i++)//i是除数，范围是2~n之间
 			{
 				if(prime%i == 0)
 				{
-					y = 0;
+					y = false;
 					break;
 				}
 			}
-			if(y == 1)
+			if(y)
 			{
 				a = prime;//第x个质数的值为a
 				x ++;
 				if(x>=n && x<=m)
 				{
 					sum = sum+ a;
+				}	
+				if(x>m) {
+					break;
 				}
 			}
 			prime ++;
