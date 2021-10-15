@@ -1,0 +1,66 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		//创建两个数组，意思是这个多项式第i次幂的系数是int[i]，并初始化所有值为0
+		int[] one = new int[101];
+		int[] two = new int[101];
+		for(int i=0;i<one.length;i++) {
+			one[i]=0;
+		}
+		//两个数为一组，第一个数表示i，第二个数表示one[i]
+		int i = 0;
+		for(int zero=0;zero<1 && i<one.length;){
+			i = in.nextInt();
+			one[i] = in.nextInt();
+			if(i==0) {
+				zero ++;
+			}
+		}
+		//两个数为一组，第一个数表示i，第二个数表示two[i]
+		int j = 0;
+		for(int zero=0;zero<1 && j<two.length;){
+			j = in.nextInt();
+			two[j] = in.nextInt();
+			if(j==0) {
+				zero ++;
+			}
+		}
+		int cnt = 0;
+		//新建数组，表示两个多项式每一项上系数的和
+		int[]sum = new int[101];
+		for(int s=0;s<sum.length;s++) {
+			sum[s] = one[s]+two[s];
+		}
+		for(int s=100;s>0;s--) {
+			if(sum[s]!=0 && s!=1) {
+				cnt ++;
+				if(cnt == 1) {
+					System.out.print(sum[s]+"x"+s);
+				}
+				else if(cnt>1 && sum[s]>0) {
+					System.out.print("+"+sum[s]+"x"+s);
+				}
+				else if(cnt>1 && sum[s]<0) {
+					System.out.print(sum[s]+"x"+s);
+				}
+			}
+			else if(sum[s]!=0 && s==1) {
+				if(sum[s]>0) {
+					System.out.print("+"+sum[s]+"x");
+				}
+				else System.out.print(sum[s]+"x");
+			}
+		}
+		if(sum[0]>0) {
+			System.out.print("+"+sum[0]);
+		}
+		else System.out.print(sum[0]);
+
+	}
+}
