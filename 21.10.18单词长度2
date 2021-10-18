@@ -1,0 +1,23 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		String s=in.next();
+		for(;s.contains(".")==false;) {
+			System.out.print(s.length());
+			System.out.print(' ');
+			s=in.next();
+		}
+		if(s.length()>1) {
+			System.out.print(s.length()-1);			
+		}
+		else {
+		}
+
+	}
+}
