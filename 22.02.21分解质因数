@@ -1,0 +1,18 @@
+
+public class hello{
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int num = in.nextInt();
+		System.out.print(num+"=");
+		for(int i=2;i<num;) {
+			if(num%i==0) {
+				num/=i;
+				System.out.print(i+"x");
+			}
+			else i++;
+		}
+		System.out.print(num);
+	}
+}
