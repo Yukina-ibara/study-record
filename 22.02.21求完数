@@ -1,0 +1,32 @@
+package hello;
+
+import java.util.Scanner;
+
+public class hello{
+
+public static boolean wanshu(int num) {
+		int sum=1;
+		int a=num;
+		for(int i=2;i<num;i++) {
+			if(num%i==0) {
+				sum+=i;
+			}
+		}
+		if(sum==a ) {
+			return true;
+		}
+		else return false;
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner in = new Scanner(System.in );
+		int n = in.nextInt();
+		int m = in.nextInt();
+		for(int num=n;num<=m;num++) {
+			if(wanshu(num)) {
+				System.out.print(num+" ");
+			}
+		}
+	}
+}
