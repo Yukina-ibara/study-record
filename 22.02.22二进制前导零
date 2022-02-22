@@ -9,10 +9,10 @@ public class hello{
 		Scanner in = new Scanner(System.in );
 		int num = in.nextInt();
 		int x = 1;
-		int y = 0;
-		for(;num>=x;x*=2) {
-			y++;
+		int y = 0;//num的位数
+		for(;num>=x;x*=2) {//如果num小于这个位数最大的值
+			y++;//则多一位
 		}
-		System.out.print(32-y);
+		System.out.print(32-y);//前导零的个数等于32减num的位数
 	}
 }
