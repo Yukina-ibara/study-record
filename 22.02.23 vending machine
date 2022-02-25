@@ -1,0 +1,55 @@
+package vending;
+
+public class vendingmachine {
+	int price;
+	int balance = 0;
+	int total;
+	void showPrompt() {
+		System.out.println("Welcome");
+	}
+	void show() {
+		System.out.println("balance="+balance);
+		System.out.println("total="+total);
+	}
+	void showPrice() {
+		System.out.println("price="+price);
+	}
+	void choose(int choose) {
+		if(choose == 1) {
+			System.out.println("chocolate");
+			price = 3;
+		};
+		if(choose == 2) {
+			System.out.println("biscuit");
+			price = 5;
+		};
+		if(choose == 3) {
+			System.out.println("soda");
+			price = 7;
+		};
+	}
+	void insertMoney(int amount){
+		balance += amount;
+	}
+	void giveFood() {
+		if(balance>=price) {
+			System.out.println("Here you are");
+			balance -= price;
+			total += price;
+		}
+		else System.out.println("not enough");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		vendingmachine vm = new vendingmachine();
+		vm.showPrompt();
+		vm.show();
+		vm.choose(2);
+		vm.showPrice();
+		vm.insertMoney(5);
+		vm.giveFood();
+		vm.show();
+
+	}
+
+}
