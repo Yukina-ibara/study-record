@@ -1,0 +1,63 @@
+package notebook;
+
+import java.util.ArrayList;
+
+public class NoteBook {
+	private ArrayList<String> notes = new ArrayList<String>();
+	
+	public void add(String note) {//加入笔记
+		notes.add(note);//add是ArrayList这个类型自带的加入函数
+	}
+	
+	public void add(String note, int location) {
+		notes.add(location, note);
+	}
+	public int getSize() {//得到笔记条数
+		{
+		return notes.size();//size也是类型自带函数
+		}
+	}
+	
+	public String getNote(int index) {//得到下标为index的那条笔记
+		return notes.get(index);
+	}
+	
+	public void removeNote(int index) {//移除下标为index的笔记，不返回东西
+		notes.remove(index);
+	}
+	
+	public String[] list() {
+		String[] list = new String[notes.size()];
+		for(int n=0;n<notes.size();n++) {
+			list[n] = notes.get(n);
+		}
+		notes.toArray(list);//把note的值填入数组list
+		return list;
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		String[] st = new String[111];
+		for(int n=0;n<st.length;n++) {
+			st[n] = "   "+n;
+		}
+		System.out.print(st[101].length());
+		NoteBook nb = new NoteBook();
+		nb.add("first");
+		nb.add("second");
+		nb.add("aaaaa");
+		System.out.println(nb.getSize());
+		String[] a = nb.list();
+		for(String s:a) {
+			System.out.println(s);
+		}
+		nb.removeNote(1);
+		for(String s:a) {
+			System.out.println(s);
+		}
+
+	}
+
+}
